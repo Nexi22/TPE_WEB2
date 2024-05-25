@@ -1,13 +1,15 @@
 {include 'inicioHtml.tpl'}
 
-{include 'agregarTarea.tpl'}
+{include 'agregarVehiculo.tpl'}
 
 <table class="table table-success table-striped mt-2">
     <thead>
     <tr>
-    <th scope="col">nombre</th>
-    <th scope="col">Descripción</th>
-    <th scope="col">Prioridad</th>
+    <th scope="col">Modelo</th>
+    <th scope="col">Año</th>
+    <th scope="col">Precio</th>
+    <th scope="col">Color</th>
+    <th scope="col">Marca</th>
     <th scope="col">Finalizada</th>
     <th scope="col">Acciones</th>
     </tr>
@@ -17,32 +19,31 @@
 
 {if $cantidad == 0}
     <tr>
-        <td colspan=5>No hay tareas para mostrar</td>
+        <td colspan=7>No hay tareas para mostrar</td>
     </tr> 
 {/if}
 
-{foreach $tareas as $tarea}
-    {$class = ($tarea->finalizada) ? "finalizada": ""}
+{foreach $vehicles as $vehicle}
+    {$class = ($vehicle->finalizada) ? "finalizada": ""}
     <tr class={$class}>
-        <td>{$tarea->nombre}</td>
-        <td>{$tarea->descripcion}</td>
-        <td>{$tarea->prioridad}</td>
-        {$estado = ($tarea->finalizada) ? "Tarea finalizada": "Sin finalizar"}
+        <td>{$vehicle->modelo}</td>
+        <td>{$vehicle->año}</td>
+        <td>{$vehicle->precio}</td>
+        <td>{$vehicle->color}</td>
+        <td>{$vehicle->marca}</td>
+        {$estado = ($vehicle->finalizada) ? "Tarea finalizada": "Sin finalizar"}
         <td>{$estado}</td>
-        {if !$tarea->finalizada}
+        {if !$vehicle->finalizada}
             <td>
-                <a href='show/{$tarea->id}' class='btn btn-primary'>Ver</a>
-                <a href='finalize/{$tarea->id}' class='btn btn-success'>Finalizar</a>
+                <a href='show/{$vehicle->id}' class='btn btn-primary'>Ver</a>
+                <a href='finalize/{$vehicle->id}' class='btn btn-success'>Finalizar</a>
             </td>
         {else}    
             <td>            
-              <a href='delete/{$tarea->id}' class='btn btn-danger'>Eliminar</a>
+              <a href='delete/{$vehicle->id}' class='btn btn-danger'>Eliminar</a>
             </td>
-
         {/if}
-    
     </tr>
 {/foreach}
 
-
-{include 'htmlEnd.tpl'}
+{include 'finHtml.tpl'}

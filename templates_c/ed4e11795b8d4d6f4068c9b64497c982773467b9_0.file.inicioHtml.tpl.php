@@ -1,7 +1,31 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 4.3.2, created on 2024-05-24 23:27:54
+  from 'C:\xampp\htdocs\TPE_WEB2\templates\inicioHtml.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.2',
+  'unifunc' => 'content_6651065a3242f5_83285016',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'ed4e11795b8d4d6f4068c9b64497c982773467b9' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\TPE_WEB2\\templates\\inicioHtml.tpl',
+      1 => 1716586061,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6651065a3242f5_83285016 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="es">
 <head>
-  <base href={$base}>
+  <base href=<?php echo $_smarty_tpl->tpl_vars['base']->value;?>
+>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -32,3 +56,5 @@
   </nav>
 </body>
 </html>
+<?php }
+}
