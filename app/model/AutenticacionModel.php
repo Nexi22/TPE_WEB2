@@ -12,4 +12,5 @@ class AutenticacionModel extends Model {
         return $usuario;
     }
 
+    
 }
