@@ -1,8 +1,7 @@
 <?php
-require 'libs/Smarty.class.php';
+require 'app/view/view.php';
 
 class VehicleView{
-
 
     function showForm(){
         $smarty = new Smarty();
