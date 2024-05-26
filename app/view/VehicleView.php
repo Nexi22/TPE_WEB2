@@ -1,12 +1,11 @@
 <?php
 require 'app/view/view.php';
 
-class VehicleView{
+class VehicleView extends view{
 
     function showForm(){
-        $smarty = new Smarty();
-        $smarty->assign('base',BASE_URL);
-        $smarty->display('agregarVehiculo.tpl');
+        $this->smarty->assign('base',BASE_URL);
+        $this->smarty->display('agregarVehiculo.tpl');
 
     }
 

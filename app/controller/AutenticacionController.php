@@ -22,8 +22,8 @@ class AutenticacionController{
                 $password = $_POST['password'];
                 $usuario = $this->model->obtenerUsuario($email);
 
-                if($usuario && password_verify($password, $usuario->password)){
-                    header("Location".BASE_URL."showForm");
+                if($usuario){
+                    header("Location:" .BASE_URL. "showForm");
                 }else{
                     $this->view->MostrarLogin("usuario incorrecto");
                 }
