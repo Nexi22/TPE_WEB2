@@ -9,15 +9,20 @@ class VehicleModel extends model{
 
         $consulta = $db->prepare("SELECT * FROM auto");
         $consulta->execute();
-        $vehiculos = $consulta->fetchAll(PDO::FETCH_OBJ);
-        return $vehiculos;
+        $vehicles = $consulta->fetchAll(PDO::FETCH_OBJ);
+        return $vehicles;
     }
 
-    function insertar($modelo, $año, $precio, $color, $marca){
+    function insertar($modelo, $anio, $precio, $color, $marca){
         $db = $this->createConexion();
-        $consulta = $db->prepare("INSERT INTO auto (modelo, año, precio, color, id_marca) VALUES (?, ?, ?, ?, ?)");
-        $consulta->execute([$modelo, $año, $precio, $color, $marca]);
+        $consulta = $db->prepare("INSERT INTO auto (modelo, anio, precio, color, id_marca) VALUES (?, ?, ?, ?, ?)");
+        $consulta->execute([$modelo, $anio, $precio, $color, $marca]);
     }
      
+    function vehiculoVendido($id){
+        $db = $this->createConexion();
+        $resultado= $db->prepare("UPDATE auto SET vendido = ? WHERE id = ?");
+        $resultado->execute([1,$id]); // ejecuta
+    }
     
 }

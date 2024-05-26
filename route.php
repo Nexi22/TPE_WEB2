@@ -23,9 +23,9 @@ require_once "app/controller/AutenticacionController.php";
         // case 'about':
         //     break;
 
-        case 'showForm':
+        case 'mostrarVehiculos':
             $controller = new vehicleController();
-            $controller->showForm();
+            $controller->mostrarVehiculos();
             break;
 
         case 'login':
@@ -38,16 +38,19 @@ require_once "app/controller/AutenticacionController.php";
             $controller->verificar();
             break;
 
-        // case 'delete':
+        case 'vendido':
+             $controller = new vehicleController();
+             $controller->vehiculoVendido($parametro[1]);
+              break;
+                
+                
+                // case 'delete':
         //     $controller = new vehicleController();
         //     $controller->deleteVehicle($parametro[1]);
         //     break;
 
     
-        //  case 'finalize':
-        //     $controller = new vehicleController();
-        //     $controller->finalizeVehicle($parametro[1]);
-        //     break;
+        
 
         // case 'show':
         //     $controller = new vehicleController();

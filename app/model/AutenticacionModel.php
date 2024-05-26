@@ -7,7 +7,7 @@ class AutenticacionModel extends Model {
         $db = $this->createConexion();
         
         $consulta = $db-> prepare("SELECT * FROM usuario WHERE email = ? ");
-        $consulta->execute(["$email"]);
+        $consulta->execute([$email]);
         $usuario = $consulta->fetch(PDO::FETCH_OBJ);
         return $usuario;
     }

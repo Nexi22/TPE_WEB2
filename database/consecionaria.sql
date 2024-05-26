@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `auto` (
   `id_auto` int(11) NOT NULL,
   `modelo` varchar(50) NOT NULL,
-  `año` int(4) NOT NULL,
+  `anio` int(4) NOT NULL,
   `precio` int(30) NOT NULL,
   `color` varchar(20) NOT NULL,
   `id_marca` int(255) NOT NULL
@@ -40,7 +40,7 @@ CREATE TABLE `auto` (
 -- Volcado de datos para la tabla `auto`
 --
 
-INSERT INTO `auto` (`id_auto`, `modelo`, `año`, `precio`, `color`, `id_marca`) VALUES
+INSERT INTO `auto` (`id_auto`, `modelo`, `anio`, `precio`, `color`, `id_marca`) VALUES
 (2, 'siena', 2010, 700000, 'azul', 0),
 (8, 'Logan', 2020, 13500000, 'blanco', 0);
 

@@ -18,13 +18,13 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">AUTOS</a>
+                <a class="nav-link active" aria-current="page" href="#">Agregar </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">MOTOS</a>
+                <a class="nav-link" href="#">Contacto</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">NOSOTROS</a>
+                <a class="nav-link disabled" aria-disabled="true">Nosotros</a>
               </li>
             </ul>
           </div>

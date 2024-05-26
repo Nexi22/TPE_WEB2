@@ -14,22 +14,24 @@ class vehicleController{
         // $this->err = new vehicleErr();
     }
 
-    function showForm(){
-        $this->view->showForm();   
+    function mostrarVehiculos(){
+        $vehicles = $this->model->getAllVehicles();
+        $this->view->mostrarVehiculos($vehicles);  
+
     }
 
     function newVehicle(){ //FUNCION QUE AÑADE UN VEHICULO A LA DB
         if($_SERVER["REQUEST_METHOD"]=="POST"){
-            if(!empty($_POST['modelo'])&& !empty($_POST['año']) && !empty($_POST['precio']) 
+            if(!empty($_POST['modelo'])&& !empty($_POST['anio']) && !empty($_POST['precio']) 
                 && !empty($_POST['color'] && !empty($_POST['marca'])))
             {
                 $modelo = $_POST['modelo'];
-                $año = $_POST['año'];
+                $año = $_POST['anio'];
                 $precio = $_POST['precio'];
                 $color = $_POST['color'];
                 $marca = $_POST['marca'];
-                $this->model->insertar($modelo, $año, $precio, $color, $marca);
-                header("Location:".BASE_URL."showForm");
+                $this->model->insertar($modelo, $anio, $precio, $color, $marca);
+                header("Location:".BASE_URL."mostrarVehiculos");
             }
             else{
                 $this->err->showErr("FALTAN DATOS!");
@@ -37,8 +39,15 @@ class vehicleController{
         }
     }
 
+
     function ShowVehicles(){
         $vehicles = $this->model->getAllVehicles();
         $this->view->ShowVehicles($vehicles);
     }
+
+    function vehiculoVendido($id){
+            $this->model->vendido($id);
+            header("Location:".BASE_URL."mostrarVehiculos");
+        }
 }
+    

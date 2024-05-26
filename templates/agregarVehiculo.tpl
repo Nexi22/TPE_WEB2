@@ -9,7 +9,7 @@
       </div>
       <div class="mb-3">
         <label class="form-label">Año del vehiculo</label>
-        <input type="number" name="año" class="form-control" placeholder="Ingrese el año">
+        <input type="number" name="anio" class="form-control" placeholder="Ingrese el año">
       </div>
       <div class="mb-3">
         <label class="form-label">Precio del vehiculo</label>

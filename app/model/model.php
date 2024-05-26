@@ -13,7 +13,9 @@ class Model {
     function createConexion() {
         try {
             $db = new PDO("mysql:host=".MYSQL_HOST.";charset=utf8", MYSQL_USER, MYSQL_PASS);
+            
             $this->createOrUseDatabase($db);
+        
         } catch (Exception $e) {
             die("Error al conectar a la base de datos: " . $e->getMessage());
         }
@@ -52,7 +54,7 @@ class Model {
             "CREATE TABLE IF NOT EXISTS `auto` (
                 `id_auto` int(11) NOT NULL AUTO_INCREMENT,
                 `modelo` varchar(50) NOT NULL,
-                `año` int(4) NOT NULL,
+                `anio` int(4) NOT NULL,
                 `precio` int(30) NOT NULL,
                 `color` varchar(20) NOT NULL,
                 `id_marca` int(255) NOT NULL,
