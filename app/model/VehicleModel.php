@@ -13,16 +13,21 @@ class VehicleModel extends model{
         return $vehicles;
     }
 
-    function insertar($modelo, $anio, $precio, $color, $marca){
+    function insertar($modelo, $anio, $precio, $color, $marca, $vendido){
         $db = $this->createConexion();
-        $consulta = $db->prepare("INSERT INTO auto (modelo, anio, precio, color, id_marca) VALUES (?, ?, ?, ?, ?)");
-        $consulta->execute([$modelo, $anio, $precio, $color, $marca]);
+        $consulta = $db->prepare("INSERT INTO auto (modelo, anio, precio, color, vendido, id_marca) VALUES (?, ?, ?, ?, ?, ?)");
+        $consulta->execute([$modelo, $anio, $precio, $color, $marca, $vendido]);
     }
      
-    function vehiculoVendido($id){
+    function vehiculoVendido($id){ //preguntarle al profe, no cambia a vendido
         $db = $this->createConexion();
+
         $resultado= $db->prepare("UPDATE auto SET vendido = ? WHERE id = ?");
         $resultado->execute([1,$id]); // ejecuta
     }
-    
+
+    function mostrarFormVehiculo(){
+        $db = $this->createConexion();
+        
+    }    
 }

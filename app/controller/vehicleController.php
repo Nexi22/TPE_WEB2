@@ -20,34 +20,34 @@ class vehicleController{
 
     }
 
-    function newVehicle(){ //FUNCION QUE AÑADE UN VEHICULO A LA DB
+    function agregarVehiculo(){ //FUNCION QUE AÑADE UN VEHICULO A LA DB
         if($_SERVER["REQUEST_METHOD"]=="POST"){
             if(!empty($_POST['modelo'])&& !empty($_POST['anio']) && !empty($_POST['precio']) 
-                && !empty($_POST['color'] && !empty($_POST['marca'])))
-            {
-                $modelo = $_POST['modelo'];
-                $año = $_POST['anio'];
-                $precio = $_POST['precio'];
-                $color = $_POST['color'];
-                $marca = $_POST['marca'];
-                $this->model->insertar($modelo, $anio, $precio, $color, $marca);
-                header("Location:".BASE_URL."mostrarVehiculos");
-            }
-            else{
-                $this->err->showErr("FALTAN DATOS!");
-            }
-        }
-    }
+                && !empty($_POST['color'] && !empty($_POST['marca']) 
+                && !empty($_POST['vendido']))){
 
-
-    function ShowVehicles(){
-        $vehicles = $this->model->getAllVehicles();
-        $this->view->ShowVehicles($vehicles);
+                    $modelo = $_POST['modelo'];
+                    $anio = $_POST['anio'];
+                    $precio = $_POST['precio'];
+                    $color = $_POST['color'];
+                    $marca = $_POST['marca'];
+                    $vendido = $_POST['vendido'];
+                    $this->model->insertar($modelo, $anio, $precio, $color, $marca, $vendido);
+                    header("Location:" .BASE_URL. "mostrarVehiculos");
+                    var_dump("modelo");
+                }
+        }    
     }
 
     function vehiculoVendido($id){
-            $this->model->vendido($id);
-            header("Location:".BASE_URL."mostrarVehiculos");
+            $this->model->vehiculoVendido($id);
+            header("Location:".BASE_URL."login");
         }
+
+     function mostrarFormVehiculo(){
+            $this->view->mostrarFormVehiculo();
+     }
 }
+
+
     

@@ -17,11 +17,7 @@ require_once "app/controller/AutenticacionController.php";
    
     //  ACA VAN TODAS LAS FUNCIONES QUE TIENE LA PAGINA, Y PASAN POR EL ROUTER.
     switch ($parametro[0]) {
-        // case 'tasks':
-        //     break;
-
-        // case 'about':
-        //     break;
+       
 
         case 'mostrarVehiculos':
             $controller = new vehicleController();
@@ -43,7 +39,17 @@ require_once "app/controller/AutenticacionController.php";
              $controller->vehiculoVendido($parametro[1]);
               break;
                 
-                
+        case 'btnNavAgregar':
+            $controller = new vehicleController();
+            $controller->mostrarFormVehiculo();
+            break;    
+
+
+        case 'agregarAutoDb':
+            $controller = new vehicleController();
+            $controller->agregarVehiculo();
+            break;
+
                 // case 'delete':
         //     $controller = new vehicleController();
         //     $controller->deleteVehicle($parametro[1]);

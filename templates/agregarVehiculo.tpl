@@ -1,6 +1,6 @@
 {include 'inicioHtml.tpl' }
 <h1>Lista de autos/motos</h1>
-    <form class="col-3 m-auto" action="verify" method="POST">
+    <form class="col-3 m-auto" action="agregarAutoDb" method="POST">
     
       <legend class="text-center">Agregar auto/moto</legend>
       <div class="mb-3">
@@ -15,10 +15,18 @@
         <label class="form-label">Precio del vehiculo</label>
         <input type="number" name="precio" class="form-control" placeholder="Ingrese el precio">
       </div>
+      
       <div class="mb-3">
         <label class="form-label">Color del vehiculo</label>
         <input type="text" name="color" class="form-control" placeholder="Ingrese el color">
       </div>
+
+      <div class="mb-3">
+        <label class="form-label">vendido?</label>
+        <input type="text" name="vendido" class="form-control" placeholder="Ingrese 1 si es vendido si no 0">
+      </div>
+
+
       <div class="mb-3">
         <label class="form-label">Marca del vehiculo</label>
         <input type="text" name="marca" class="form-control" placeholder="Ingrese la marca">

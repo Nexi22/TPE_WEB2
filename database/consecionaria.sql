@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2024 a las 22:53:30
+-- Tiempo de generación: 27-05-2024 a las 17:12:42
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -33,6 +33,7 @@ CREATE TABLE `auto` (
   `anio` int(4) NOT NULL,
   `precio` int(30) NOT NULL,
   `color` varchar(20) NOT NULL,
+  `vendido` tinyint(1) DEFAULT NULL,
   `id_marca` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -40,9 +41,9 @@ CREATE TABLE `auto` (
 -- Volcado de datos para la tabla `auto`
 --
 
-INSERT INTO `auto` (`id_auto`, `modelo`, `anio`, `precio`, `color`, `id_marca`) VALUES
-(2, 'siena', 2010, 700000, 'azul', 0),
-(8, 'Logan', 2020, 13500000, 'blanco', 0);
+INSERT INTO `auto` (`id_auto`, `modelo`, `anio`, `precio`, `color`, `vendido`, `id_marca`) VALUES
+(2, 'siena', 2010, 700000, 'azul', NULL, 0),
+(8, 'Logan', 2020, 13500000, 'blanco', NULL, 0);
 
 -- --------------------------------------------------------
 
