@@ -45,7 +45,10 @@ require_once "app/controller/marcaController.php";
             $controller->mostrarFormVehiculo();
             break;    
         
-             
+        case 'borrar':
+                $controller = new vehicleController();
+                $controller->borrarVehiculo($parametro[1]);
+                 break;     
 
         case 'agregarAutoDb':
             $controller = new vehicleController();

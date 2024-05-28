@@ -21,10 +21,7 @@
         <input type="text" name="color" class="form-control" placeholder="Ingrese el color">
       </div>
 
-      <div class="mb-3">
-        <label class="form-label">vendido?</label>
-        <input type="text" name="vendido" class="form-control" placeholder="Ingrese 1 si es vendido si no 0">
-      </div>
+    
 
 
       <div class="mb-3">

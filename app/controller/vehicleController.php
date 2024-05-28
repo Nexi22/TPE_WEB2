@@ -23,17 +23,14 @@ class vehicleController{
     function agregarVehiculo(){ //FUNCION QUE AÑADE UN VEHICULO A LA DB
         if($_SERVER["REQUEST_METHOD"]=="POST"){
             if(!empty($_POST['modelo'])&& !empty($_POST['anio']) && !empty($_POST['precio']) 
-                && !empty($_POST['color'] && !empty($_POST['marca']) 
-                && !empty($_POST['vendido']))){
+                && !empty($_POST['color'] && !empty($_POST['marca']))){
 
                     $modelo = $_POST['modelo'];
                     $anio = $_POST['anio'];
                     $precio = $_POST['precio'];
                     $color = $_POST['color'];
                     $marca = $_POST['marca'];
-                    $vendido = $_POST['vendido'];
-                    
-                    $this->model->insertar($modelo, $anio, $precio, $color, $marca, $vendido);
+                    $this->model->insertar($modelo, $anio, $precio, $color, $marca);
                     header("Location:" .BASE_URL. "mostrarVehiculos");
                     
                 }
@@ -42,8 +39,14 @@ class vehicleController{
 
     function vehiculoVendido($id){
             $this->model->vehiculoVendido($id);
-            header("Location:".BASE_URL."login");
+            header("Location:".BASE_URL."mostrarVehiculo");
         }
+
+    function borrarVehiculo($id){
+            $this->model->borrarVehiculo($id);
+            header("Location:".BASE_URL."mostrarVehiculo");
+        }
+    
 
      function mostrarFormVehiculo(){
             $this->view->mostrarFormVehiculo();
