@@ -5,7 +5,7 @@ require_once "app/view/marcaview.php";
 class marcaController{
     private $model;
     private $view;
-    private $err;
+    //private $err;
 
 
     public function __construct(){

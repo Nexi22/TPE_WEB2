@@ -32,9 +32,10 @@ class vehicleController{
                     $color = $_POST['color'];
                     $marca = $_POST['marca'];
                     $vendido = $_POST['vendido'];
+                    
                     $this->model->insertar($modelo, $anio, $precio, $color, $marca, $vendido);
                     header("Location:" .BASE_URL. "mostrarVehiculos");
-                    var_dump("modelo");
+                    
                 }
         }    
     }

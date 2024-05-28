@@ -21,7 +21,6 @@ class VehicleModel extends model{
      
     function vehiculoVendido($id){ //preguntarle al profe, no cambia a vendido
         $db = $this->createConexion();
-
         $resultado= $db->prepare("UPDATE auto SET vendido = ? WHERE id = ?");
         $resultado->execute([1,$id]); // ejecuta
     }

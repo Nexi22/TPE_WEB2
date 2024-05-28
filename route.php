@@ -50,7 +50,6 @@ require_once "app/controller/marcaController.php";
         case 'agregarAutoDb':
             $controller = new vehicleController();
             $controller->agregarVehiculo();
-            echo 'hola';
             break;
 
             //root de la TABLA MARCA

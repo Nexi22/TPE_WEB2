@@ -24,10 +24,10 @@
     
     <tr class={$class}>
     
-        <td>{$marca->modelo}</td>
-        <td>{$marca->anio}</td>
-        <td>{$marca->precio}</td>
-        <td>{$marca->color}</td>
+        <td>{$marca->nombre}</td>
+        <td>{$marca->pais_de_origen}</td>
+        <td>{$marca->ano_de_fundacion}</td>
+        <td>{$marca->descripcion}</td>
         
 
     </tr>
