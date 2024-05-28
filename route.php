@@ -3,6 +3,7 @@
 require_once "app/controller/vehicleController.php";
 require_once "app/controller/AutenticacionController.php";
 // require_once "app/controller/ErrController.php";
+require_once "app/controller/marcaController.php";
 
 // definimos la base url de forma dinamica
     define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
@@ -39,17 +40,31 @@ require_once "app/controller/AutenticacionController.php";
              $controller->vehiculoVendido($parametro[1]);
               break;
                 
-        case 'btnNavAgregar':
+        case 'btnNavAgregarAuto':
             $controller = new vehicleController();
             $controller->mostrarFormVehiculo();
             break;    
-
+        
+             
 
         case 'agregarAutoDb':
             $controller = new vehicleController();
             $controller->agregarVehiculo();
+            echo 'hola';
             break;
 
+            //root de la TABLA MARCA
+
+        case 'btnNavAgregarMarca':
+                    $controller = new marcaController();
+                    $controller->mostrarMarcas();
+                    break; 
+
+
+        case 'agregarMarcaDb':
+            $controller = new vehicleController();
+            $controller->agregarMarca();
+            
                 // case 'delete':
         //     $controller = new vehicleController();
         //     $controller->deleteVehicle($parametro[1]);

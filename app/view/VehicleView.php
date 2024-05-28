@@ -1,7 +1,7 @@
 <?php
-require 'app/view/view.php';
+require_once 'app/view/view.php';
 
-class VehicleView extends view{
+class VehicleView extends View{
 
     function mostrarVehiculos($vehicles){
         
