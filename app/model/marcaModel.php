@@ -1,7 +1,7 @@
 <?php
 require_once "app/model/model.php";
 
-class marcaModel extends Model {
+class marcaModel extends model {
     
     function mostrarFormMarca(){
         $db = $this->createConexion();
@@ -14,6 +14,7 @@ class marcaModel extends Model {
         $consulta->execute();
         $marcas = $consulta->fetchAll(PDO::FETCH_OBJ);
         return $marcas;
+        
     }
 
 

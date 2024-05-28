@@ -5,10 +5,11 @@ class marcaView extends View{
 
     
     function mostrarMarcas($marcas){
-
-      $this->smarty->assing("marcas", $marcas);
-      //$this->smarty->display('tablaMarca.tpl');
-      $this->smarty->display('inicioHtml.tpl');
+      
+      $this->smarty->assign("cantidad", count($marcas));
+      $this->smarty->assign("marcas", $marcas);
+      $this->smarty->display('tablaMarca.tpl');
+      
   }
 
 }

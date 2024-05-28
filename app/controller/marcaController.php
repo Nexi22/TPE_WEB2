@@ -15,12 +15,12 @@ class marcaController{
 
     function mostrarMarcas(){
         
-        $marcas =$this->model->getALLMarcas();
+       $marcas =$this->model->getALLMarcas();
         $this->view->mostrarMarcas($marcas);
         
     }
    
-
+    
     
 
  }
