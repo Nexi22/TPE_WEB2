@@ -21,8 +21,8 @@
               Agregar
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="btnNavAgregarAuto">Auto</a></li>
-              <li><a class="dropdown-item" href="btnNavAgregarMarca">Marca</a></li>
+              <li><a class="dropdown-item" href="AgregarAutoNavBTN">Auto</a></li>
+              <li><a class="dropdown-item" href="AgregarMarcaNavBTN">Marca</a></li>
             </ul>
           </li>
           <li class="nav-item">

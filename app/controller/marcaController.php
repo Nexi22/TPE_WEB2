@@ -13,32 +13,27 @@ class marcaController{
         $this->view = new marcaView();
     }
 
-    function mostrarMarcas(){
-        
-        $marcas =$this->model->getALLMarcas();
-        $this->view->mostrarMarcas($marcas);
-
+    function mostrarFormMarca(){ //MUESTRA EL FORMULARIO PARA AGREGAR UNA MARCA
+        $marcas = $this->model->getALLMarcas();
+        $this->view->mostrarFormMarca($marcas);
     }
    
     function agregarMarca(){ //FUNCION QUE AÑADE UN VEHICULO A LA DB
-        if($_SERVER["REQUEST_METHOD"]=="POST"){
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(!empty($_POST['nombre'])&& !empty($_POST['pais_de_origen']) && !empty($_POST['ano_de_fundacion']) 
                 && !empty($_POST['descripcion'])){
-
-                    $modelo = $_POST['nombre'];
-                    $anio = $_POST['pais_de_origen'];
-                    $precio = $_POST['ano_de_fundacion'];
-                    $color = $_POST['descripcion'];
-                    $this->model->insertar($nombre, $pais_de_origen, $ano_de_fundacion, $descripcion);
-                    header("Location:" .BASE_URL. "mostrarMarcas");
+                    $nombre = $_POST['nombre'];
+                    $pais_de_origen = $_POST['pais_de_origen'];
+                    $ano_de_fundacion = $_POST['ano_de_fundacion'];
+                    $descripcion = $_POST['descripcion'];
                     
+                    $this->model->insertarMarca($nombre, $pais_de_origen, $ano_de_fundacion, $descripcion);
+                    header("Location:" .BASE_URL. "mostrarVehiculos");
                 }
 
         }    
     }
-    
-
- }
+}
 
 
 

@@ -5,7 +5,6 @@ class marcaModel extends model {
     
     function mostrarFormMarca(){
         $db = $this->createConexion();
-        
     }   
 
     function getALLMarcas(){
@@ -14,16 +13,16 @@ class marcaModel extends model {
         $consulta->execute();
         $marcas = $consulta->fetchAll(PDO::FETCH_OBJ);
         return $marcas;
-        
     }
 
-    function insertar($nombre, $pais_de_origen, $año_de_fundacion, $descripcion){
+    function insertarMarca($nombre, $pais_de_origen, $ano_de_fundacion, $descripcion){
+        //CREA LA CONEXION A LA DB
         $db = $this->createConexion();
+        //MANDAS LA CONSULTA
         $consulta = $db->prepare("INSERT INTO marca (nombre, pais_de_origen, ano_de_fundacion, descripcion) VALUES (?, ?, ?, ?)");
+        //EJECUTAS
         $consulta->execute([$nombre, $pais_de_origen, $ano_de_fundacion, $descripcion]);
     }
-
-
 }
 
 

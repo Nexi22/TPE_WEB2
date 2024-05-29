@@ -29,11 +29,10 @@ require_once "app/controller/marcaController.php";
             $controller->verificar();
             break;
 
-        case 'btnNavAgregarAuto':
+        case 'AgregarAutoNavBTN':
             $controller = new vehicleController();
             $controller->mostrarFormVehiculo();
             break;    
-        
         
         case 'mostrarVehiculos':
             $controller = new vehicleController();
@@ -51,33 +50,28 @@ require_once "app/controller/marcaController.php";
             break;
             
         case 'vendido':
-             $controller = new vehicleController();
-             $controller->vehiculoVendido($parametro[1]);
-              break;
-                
-        
-        case 'borrar':
-                $controller = new vehicleController();
-                $controller->borrarVehiculo($parametro[1]);
-                 break;     
-
-        
-
-            //root de la TABLA MARCA
-
-        case 'btnNavAgregarMarca':
-                    $controller = new marcaController();
-                    $controller->agregarMarca();
-                    break; 
-
-
-        case 'agregarMarcaDb':
             $controller = new vehicleController();
-            $controller->mostrarMarcas();
+            $controller->vehiculoVendido($parametro[1]);
+            break;
             
+        case 'borrar':
+            $controller = new vehicleController();
+            $controller->borrarVehiculo($parametro[1]);
+            break;     
+
+        //ROOT DE LA TABLA MARCA
+         case 'AgregarMarcaSubmitBTN': //ESTE INSERTA LA MARCA EN LA DB
+            $controller = new marcaController();
+            $controller->agregarMarca();
+            break; 
+
+        case 'AgregarMarcaNavBTN': //ESTO MUESTRA EL FORMULARIO
+            $controller = new marcaController();
+            $controller->mostrarFormMarca();
+            break;
                 
 
         // default:
-        //    $err = new ErrController();
-        //    $err->showErr("404 not found");
+        //     $err = new ErrController();
+        //     $err->showErr("404 not found");
     }

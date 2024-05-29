@@ -21,7 +21,7 @@ class vehicleController{
     }
 
     function agregarVehiculo(){ //FUNCION QUE AÑADE UN VEHICULO A LA DB
-        if($_SERVER["REQUEST_METHOD"]=="POST"){
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(!empty($_POST['modelo'])&& !empty($_POST['anio']) && !empty($_POST['precio']) 
                 && !empty($_POST['color'] && !empty($_POST['marca']))){
 
