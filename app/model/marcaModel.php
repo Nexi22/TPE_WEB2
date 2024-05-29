@@ -17,6 +17,12 @@ class marcaModel extends model {
         
     }
 
+    function insertar($nombre, $pais_de_origen, $año_de_fundacion, $descripcion){
+        $db = $this->createConexion();
+        $consulta = $db->prepare("INSERT INTO marca (nombre, pais_de_origen, ano_de_fundacion, descripcion) VALUES (?, ?, ?, ?)");
+        $consulta->execute([$nombre, $pais_de_origen, $ano_de_fundacion, $descripcion]);
+    }
+
 
 }
 

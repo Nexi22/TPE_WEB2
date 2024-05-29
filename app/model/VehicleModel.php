@@ -6,7 +6,6 @@ class VehicleModel extends model{
     function getAllVehicles(){
         //CREO LA CONEXION Y ENVIO LA CONSULTA A LA DB
         $db = $this->createConexion();
-
         $consulta = $db->prepare("SELECT * FROM auto");
         $consulta->execute();
         $vehicles = $consulta->fetchAll(PDO::FETCH_OBJ);
@@ -31,6 +30,14 @@ class VehicleModel extends model{
         $resultado->execute([$id]); // ejecuta
     }
     
+    function detalleVehiculo($id){
+        $db = $this->createConexion();
+        $resultado=$db->prepare("UPDATE auto SET vendido=? WHERE id=?");
+        $resultado->execute([1,$id]);
+    }
+
+
+
     function get($id){
         //abrimos la conexion;
         $db = $this->createConexion();

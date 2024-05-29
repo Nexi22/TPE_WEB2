@@ -46,7 +46,11 @@ class vehicleController{
             $this->model->borrarVehiculo($id);
             header("Location:".BASE_URL."mostrarVehiculo");
         }
-    
+
+    function datelleVehiculo($id){
+            $this->model->detalleVehiculo($id);
+            header("Location:".BASE_URL."mostrarVehiculo");
+        }
 
      function mostrarFormVehiculo(){
             $this->view->mostrarFormVehiculo();

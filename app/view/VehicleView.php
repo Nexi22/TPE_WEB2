@@ -13,6 +13,11 @@ class VehicleView extends View{
 
     }
 
+    function detalleVehiculo($vehicle){
+      $this->smarty->assign("vehiculo", $vehicle);
+      $this->smarty->display('verVehiculos.tpl');
+    }
+
     function mostrarFormVehiculo(){
         $this->smarty->display('agregarVehiculo.tpl');
   }

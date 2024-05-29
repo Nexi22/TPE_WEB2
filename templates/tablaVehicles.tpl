@@ -33,7 +33,7 @@
         <td>{$estado}</td>
         {if !$vehicle->vendido}
             <td>
-                <a href='ver/{$vehicle->id}' class='btn btn-primary'>Ver</a>
+                <a href='verVehiculo/{$vehicle->id}' class='btn btn-primary'>Ver</a>
                 
                 <a href='vendido/{$vehicle->id}' class='btn btn-success'>Vendido</a>
             </td>

@@ -19,66 +19,63 @@ require_once "app/controller/marcaController.php";
     //  ACA VAN TODAS LAS FUNCIONES QUE TIENE LA PAGINA, Y PASAN POR EL ROUTER.
     switch ($parametro[0]) {
        
-
-        case 'mostrarVehiculos':
-            $controller = new vehicleController();
-            $controller->mostrarVehiculos();
-            break;
-
         case 'login':
             $controller = new AutenticacionController();
             $controller->MostrarLogin();
             break;
-
+        
         case 'verificarLog':
             $controller = new AutenticacionController();
             $controller->verificar();
             break;
 
-        case 'vendido':
-             $controller = new vehicleController();
-             $controller->vehiculoVendido($parametro[1]);
-              break;
-                
         case 'btnNavAgregarAuto':
             $controller = new vehicleController();
             $controller->mostrarFormVehiculo();
             break;    
         
-        case 'borrar':
-                $controller = new vehicleController();
-                $controller->borrarVehiculo($parametro[1]);
-                 break;     
+        
+        case 'mostrarVehiculos':
+            $controller = new vehicleController();
+            $controller->mostrarVehiculos();
+            break;
 
         case 'agregarAutoDb':
             $controller = new vehicleController();
             $controller->agregarVehiculo();
             break;
 
+        case'verVehiculo':
+            $controller = new vehicleController();
+            $controller-> detalleVehiculo($parametro[1]);
+            break;
+            
+        case 'vendido':
+             $controller = new vehicleController();
+             $controller->vehiculoVendido($parametro[1]);
+              break;
+                
+        
+        case 'borrar':
+                $controller = new vehicleController();
+                $controller->borrarVehiculo($parametro[1]);
+                 break;     
+
+        
+
             //root de la TABLA MARCA
 
         case 'btnNavAgregarMarca':
                     $controller = new marcaController();
-                    $controller->mostrarMarcas();
+                    $controller->agregarMarca();
                     break; 
 
 
         case 'agregarMarcaDb':
             $controller = new vehicleController();
-            $controller->agregarMarca();
+            $controller->mostrarMarcas();
             
-                // case 'delete':
-        //     $controller = new vehicleController();
-        //     $controller->deleteVehicle($parametro[1]);
-        //     break;
-
-    
-        
-
-        // case 'show':
-        //     $controller = new vehicleController();
-        //     $controller->showVehicle($parametro[1]);
-        //     break;
+                
 
         // default:
         //    $err = new ErrController();
