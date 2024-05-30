@@ -13,7 +13,7 @@ class marcaController{
         $this->view = new marcaView();
     }
 
-    function mostrarFormMarca(){ //MUESTRA EL FORMULARIO PARA AGREGAR UNA MARCA
+    function mostrarFormMarca(){ //agarra las marcas usando el método getAllMarcas y pasa los datos a la vista.
         $marcas = $this->model->getALLMarcas();
         $this->view->mostrarFormMarca($marcas);
     }

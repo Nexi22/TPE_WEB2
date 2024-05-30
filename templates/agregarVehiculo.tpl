@@ -21,16 +21,15 @@
         <input type="text" name="color" class="form-control" placeholder="Ingrese el color">
       </div>
 
-    
-
-
       <div class="mb-3">
         <label class="form-label">Marca del vehiculo</label>
-        <input type="text" name="marca" class="form-control" placeholder="Ingrese la marca">
+        <select name="marca_id" class="form-control">
+          <option value="">Seleccione una marca</option>
+            @foreach ($marcas as $marca)
+              <option value="{{ $marca->id }}">{{ $marca->nombre }}</option>
+            @endforeach
+        </select>
       </div>
-      
-      
-
 
       <button type="submit" class="btn btn-primary col-12">Submit</button>
   </form>

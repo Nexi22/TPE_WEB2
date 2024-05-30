@@ -12,10 +12,10 @@ class VehicleModel extends model{
         return $vehicles;
     }
 
-    function insertar($modelo, $anio, $precio, $color, $marca){
+    function insertar($modelo, $anio, $precio, $color){
         $db = $this->createConexion();
-        $consulta = $db->prepare("INSERT INTO auto (modelo, anio, precio, color,id_marca) VALUES (?, ?, ?, ?, ?)");
-        $consulta->execute([$modelo, $anio, $precio, $color, $marca]);
+        $consulta = $db->prepare("INSERT INTO auto (modelo, anio, precio, color) VALUES (?, ?, ?, ?)");
+        $consulta->execute([$modelo, $anio, $precio, $color]);
     }
      
     function vehiculoVendido($id){ //preguntarle al profe, no cambia a vendido
@@ -35,9 +35,6 @@ class VehicleModel extends model{
         $resultado=$db->prepare("UPDATE auto SET vendido=? WHERE id=?");
         $resultado->execute([1,$id]);
     }
-
-
-
     function get($id){
         //abrimos la conexion;
         $db = $this->createConexion();
@@ -47,10 +44,6 @@ class VehicleModel extends model{
         $vehicle = $sentencia->fetch(PDO::FETCH_OBJ);
         return $vehicle;
     }
-
-
-    
-
     function mostrarFormVehiculo(){
         $db = $this->createConexion();
         
