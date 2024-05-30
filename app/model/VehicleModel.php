@@ -12,10 +12,10 @@ class VehicleModel extends model{
         return $vehicles;
     }
 
-    function insertar($modelo, $anio, $precio, $color, $id_marca){
+    function insertar($modelo, $anio, $precio, $color){
         $db = $this->createConexion();
-        $consulta = $db->prepare("INSERT INTO auto (modelo, anio, precio, color, id_marca) VALUES (?, ?, ?, ?, ?)");
-        $consulta->execute([$modelo, $anio, $precio, $color, $id_marca]);
+        $consulta = $db->prepare("INSERT INTO auto (modelo, anio, precio, color) VALUES (?, ?, ?, ?)");
+        $consulta->execute([$modelo, $anio, $precio, $color]);
     }
      
     function vehiculoVendido($id){ //preguntarle al profe, no cambia a vendido
