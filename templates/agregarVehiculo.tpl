@@ -23,12 +23,12 @@
 
       <div class="mb-3">
         <label class="form-label">Marca del vehiculo</label>
-        <select name="marca_id" class="form-control">
-          <option value="">Seleccione una marca</option>
-            @foreach ($marcas as $marca)
-              <option value="{{ $marca->id }}">{{ $marca->nombre }}</option>
-            @endforeach
-        </select>
+          <select name="marca_id" class="form-control">
+            <option value="">Seleccione una marca</option>
+            {foreach from=$marcas item=marca}
+              <option value="{$marca->id}">{$marca->nombre}</option>
+            {/foreach}
+          </select>
       </div>
 
       <button type="submit" class="btn btn-primary col-12">Submit</button>
