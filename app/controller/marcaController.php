@@ -28,11 +28,20 @@ class marcaController{
                     $descripcion = $_POST['descripcion'];
                     
                     $this->model->insertarMarca($nombre, $pais_de_origen, $ano_de_fundacion, $descripcion);
-                    header("Location:" .BASE_URL. "mostrarVehiculos");
+                    header("Location:" .BASE_URL. "mostrarMarcas");
                 }
 
         }    
     }
+
+    function mostrarMarcas(){
+        $marcas = $this->model->getALLMarcas();
+        $this->view->mostrarMarcas($marcas);
+
+    }
+
+
+
 }
 
 

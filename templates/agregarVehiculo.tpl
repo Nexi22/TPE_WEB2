@@ -1,8 +1,7 @@
 {include 'inicioHtml.tpl' }
-<h1>Lista de autos/motos</h1>
     <form class="col-3 m-auto" action="agregarAutoDb" method="POST">
     
-      <legend class="text-center">Agregar auto/moto</legend>
+      <legend class="text-center">Agregar vehiculo</legend>
       <div class="mb-3">
         <label class="form-label">Modelo del vehiculo</label>
         <input type="text" name="modelo" class="form-control" placeholder="Ingrese el modelo">
@@ -21,6 +20,7 @@
         <input type="text" name="color" class="form-control" placeholder="Ingrese el color">
       </div>
 
+      
       <div class="mb-3">
         <label class="form-label">Marca del vehiculo</label>
           <select name="marca_id" class="form-control">

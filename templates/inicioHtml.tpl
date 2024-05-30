@@ -10,7 +10,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Inicio</a>
+      <a class="navbar-brand" href="mostrarVehiculos">Inicio</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -21,16 +21,14 @@
               Agregar
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="AgregarAutoNavBTN">Auto</a></li>
+              <li><a class="dropdown-item" href="AgregarAutoNavBTN">Vehiculo</a></li>
               <li><a class="dropdown-item" href="AgregarMarcaNavBTN">Marca</a></li>
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contacto</a>
+            <a class="nav-link" href="#">Nosotros</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Nosotros</a>
-          </li>
+            <a class="nav-link" href="login">Login</a>
         </ul>
       </div>
     </div>

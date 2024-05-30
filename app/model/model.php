@@ -57,6 +57,7 @@ class Model {
                 `anio` int(4) NOT NULL,
                 `precio` int(30) NOT NULL,
                 `color` varchar(20) NOT NULL,
+                `vendido` tinyint(1) NOT NULL,
                 `id_marca` int(255) NOT NULL,
                 PRIMARY KEY (`id_auto`)
             );",

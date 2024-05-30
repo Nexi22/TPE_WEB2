@@ -44,10 +44,10 @@ require_once "app/controller/marcaController.php";
             $controller->agregarVehiculo();
             break;
 
-        case'verVehiculo':
-            $controller = new vehicleController();
-            $controller-> detalleVehiculo($parametro[1]);
-            break;
+        // case'verVehiculo':
+        //     $controller = new vehicleController();
+        //     $controller-> detalleVehiculo($parametro[1]);
+        //     break;
             
         case 'vendido':
             $controller = new vehicleController();
@@ -60,6 +60,10 @@ require_once "app/controller/marcaController.php";
             break;     
 
         //ROOT DE LA TABLA MARCA
+          //  
+            //
+            //
+            //
          case 'AgregarMarcaSubmitBTN': //ESTE INSERTA LA MARCA EN LA DB
             $controller = new marcaController();
             $controller->agregarMarca();
@@ -69,7 +73,10 @@ require_once "app/controller/marcaController.php";
             $controller = new marcaController();
             $controller->mostrarFormMarca();
             break;
-                
+        
+        case 'mostrarMarcas':
+            $controller = new marcaController();
+            $controller->mostrarMarcas();
 
         // default:
         //     $err = new ErrController();
