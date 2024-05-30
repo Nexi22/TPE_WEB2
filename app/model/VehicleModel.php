@@ -20,26 +20,26 @@ class VehicleModel extends model{
      
     function vehiculoVendido($id){ //preguntarle al profe, no cambia a vendido
         $db = $this->createConexion();
-        $resultado= $db->prepare("UPDATE auto SET vendido = ? WHERE id = ?");
+        $resultado= $db->prepare("UPDATE auto SET vendido = ? WHERE id_auto = ?");
         $resultado->execute([1,$id]); // ejecuta
     }
 
     function borrarVehiculo($id){
         $db = $this->createConexion();
-        $resultado= $db->prepare("DELETE FROM auto WHERE id = ?");
+        $resultado= $db->prepare("DELETE FROM auto WHERE id_auto = ?");
         $resultado->execute([$id]); // ejecuta
     }
     
     function detalleVehiculo($id){
         $db = $this->createConexion();
-        $resultado=$db->prepare("UPDATE auto SET vendido=? WHERE id=?");
-        $resultado->execute([1,$id]);
+        $resultado=$db->prepare("SELECT * FROM auto WHERE id_auto=?");
+        $resultado->execute([$id]);
     }
     function get($id){
         //abrimos la conexion;
         $db = $this->createConexion();
         //Enviar la consulta
-        $sentencia = $db->prepare("SELECT * FROM auto WHERE id = ?");
+        $sentencia = $db->prepare("SELECT * FROM auto WHERE id_auto = ?");
         $sentencia->execute([$id]);
         $vehicle = $sentencia->fetch(PDO::FETCH_OBJ);
         return $vehicle;

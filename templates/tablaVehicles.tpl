@@ -33,13 +33,13 @@
         <td>{$estado}</td>
         {if !$vehicle->vendido}
             <td>
-                <a href='verVehiculo/{$vehicle->id}' class='btn btn-primary'>Ver</a>
+                <a href='verVehiculo/{$vehicle->id_auto}' class='btn btn-primary'>Ver</a>
                 
-                <a href='vendido/{$vehicle->id}' class='btn btn-success'>Vendido</a>
+                <a href='vendido/{$vehicle->id_auto}' class='btn btn-success'>Vendido</a>
             </td>
         {else}    
             <td>            
-              <a href='borrar/{$vehicle->id}' class='btn btn-danger'>Eliminar</a>
+              <a href='borrar/{$vehicle->id_auto}' class='btn btn-danger'>Eliminar</a>
             </td>
 
         {/if}

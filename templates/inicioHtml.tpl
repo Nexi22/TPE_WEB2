@@ -29,6 +29,7 @@
             <a class="nav-link" href="#">Nosotros</a>
           </li>
             <a class="nav-link" href="login">Login</a>
+            <a class="nav-link" href="passwordHash">asd</a>
         </ul>
       </div>
     </div>

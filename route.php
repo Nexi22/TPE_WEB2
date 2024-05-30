@@ -44,10 +44,10 @@ require_once "app/controller/marcaController.php";
             $controller->agregarVehiculo();
             break;
 
-        // case'verVehiculo':
-        //     $controller = new vehicleController();
-        //     $controller-> detalleVehiculo($parametro[1]);
-        //     break;
+        case'verVehiculo':
+            $controller = new vehicleController();
+            $controller-> detalleVehiculo($parametro[1]);
+            break;
             
         case 'vendido':
             $controller = new vehicleController();

@@ -1,5 +1,5 @@
 <?php
-require_once "app/view/View.php";
+require_once "app/view/view.php";
 
 class AutenticacionView extends view{
     function mostrarLogin ($msj = NULL){
