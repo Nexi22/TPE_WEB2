@@ -51,6 +51,10 @@ class vehicleController{
             header("Location:".BASE_URL."verVehiculo");
         }
 
+    function verVehiculo($id){
+            $this->view->detalleVehiculo($id);
+     }
+
      function mostrarFormVehiculo(){
             $this->view->mostrarFormVehiculo();
      }

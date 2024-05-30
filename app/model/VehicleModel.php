@@ -34,6 +34,8 @@ class VehicleModel extends model{
         $db = $this->createConexion();
         $resultado=$db->prepare("SELECT * FROM auto WHERE id_auto=?");
         $resultado->execute([$id]);
+        $vehicle = $resultado->fetch(PDO::FETCH_OBJ);
+        return $vehicle;
     }
     function get($id){
         //abrimos la conexion;
