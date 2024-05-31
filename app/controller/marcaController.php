@@ -38,10 +38,10 @@ class marcaController{
         header("Location:".BASE_URL."mostrarMarcas");
     }
 
-    function detalleMarca($id){
-        $this->model->detalleMarca($id);
-        header("Location:".BASE_URL."verMarca");
-    }
+    // function detalleMarca($id){
+    //     $this->model->detalleMarca($id);
+    //     header("Location:".BASE_URL."verMarca");
+    // }
 
     function verMarca($id){
         $this->view->detalleMarca($id);

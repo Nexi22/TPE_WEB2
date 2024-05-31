@@ -25,11 +25,13 @@
               <li><a class="dropdown-item" href="AgregarMarcaNavBTN">Marca</a></li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="nosotros">Nosotros</a>
-          </li>
-            <a class="nav-link" href="login">Login</a>
-            <a class="nav-link" href="passwordHash">asd</a>
+          <li class="nav-item"><a class="nav-link" href="nosotros">Nosotros</a></li>
+          {if $logeado}
+            <li class="nav-item"><a class="nav-link" href="logout">logout</a></li>
+            <li class="nav-item"><a class="nav-link" href="">Bienvenido pelotudo {$usuario}</a></li>
+            {else}
+              <li><a class="nav-link" href="login">Login</a></li>
+          {/if}
         </ul>
       </div>
     </div>

@@ -7,6 +7,8 @@
     <th scope="col">pais de origen</th>
     <th scope="col">año de fundacion</th>
     <th scope="col">descripcion</th>
+    <th scope="col">Acciones</th>
+    
     
     </tr>
 </thead>
@@ -22,7 +24,7 @@
 {foreach $marcas as $marca}
     
     
-    <tr class={$class}>
+    <tr>
     
         <td>{$marca->nombre}</td>
         <td>{$marca->pais_de_origen}</td>

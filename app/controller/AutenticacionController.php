@@ -22,8 +22,14 @@ class AutenticacionController{
                 $usuario = $this->model->obtenerUsuario($email);
 
                 if($usuario && password_verify($password, $usuario->password )){
+
+                    session_start();
+                    $_SESSION['USERNAME'] = $usuario->email;
+                    $_SESSION['IS_LOGGED'] = true;
+                    $_SESSION['ROLE'] = $usuario->rol;
+
                     header("Location:" .BASE_URL. "mostrarVehiculos");
-                    exit;
+                    die();
                 }else{
                     $this->view->MostrarLogin("usuario incorrecto");
                 }
@@ -33,5 +39,12 @@ class AutenticacionController{
         
             }
         }
+    }
+
+    function logout(){
+        session_start();
+        session_destroy();
+        header("Location:" .BASE_URL. "login");
+
     }
 }

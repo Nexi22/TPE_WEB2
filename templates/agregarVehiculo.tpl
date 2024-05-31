@@ -25,8 +25,8 @@
         <label class="form-label">Marca del vehiculo</label>
           <select name="marca_id" class="form-control">
             <option value="">Seleccione una marca</option>
-            {foreach from=$marcas item=marca}
-              <option value="{$marca->id}">{$marca->nombre}</option>
+            {foreach from=$marca item=m}
+              <option value="{$m->id_marca}">{$m->nombre}</option>
             {/foreach}
           </select>
       </div>
