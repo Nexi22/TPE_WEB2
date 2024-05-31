@@ -1,6 +1,7 @@
 {include 'inicioHtml.tpl'}
 
-<h1>Lista de tareas</h1>
+<h1 class="animated-header">Concesionaria</h1>
+
     <form class="col-3 m-auto" action="verificarLog" method="POST">
       <legend class="text-center">Inicio de Sesion</legend>
         <div class="mb-3">

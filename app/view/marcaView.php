@@ -9,6 +9,11 @@ class marcaView extends View{
       $this->smarty->display('tablaMarca.tpl');
     }
 
+    function detalleMarca($marca){
+      $this->smarty->assign("marca", $marca);
+      $this->smarty->display('verMarcas.tpl');
+    }
+
   function mostrarformMarca($marcas){ //ESTO MUESTRA EL FORMULARIO PARA AÑADIR MARCAS
     $this->smarty->assign("marcas", $marcas);
     $this->smarty->display('agregarMarca.tpl');

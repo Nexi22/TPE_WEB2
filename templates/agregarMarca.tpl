@@ -1,5 +1,5 @@
 {include 'inicioHtml.tpl' }
-<h1>FORMULARIO PARA AGREGAR MARCA</h1>
+<h1>Formulario para agregar marca</h1>
     <form class="col-3 m-auto" action="AgregarMarcaSubmitBTN" method="POST">
     
       <legend class="text-center">Agregar marca</legend>

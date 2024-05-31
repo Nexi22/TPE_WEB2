@@ -23,6 +23,35 @@ class marcaModel extends model {
         //EJECUTAS
         $consulta->execute([$nombre, $pais_de_origen, $ano_de_fundacion, $descripcion]);
     }
+
+    function get($id){
+        //abrimos la conexion;
+        $db = $this->createConexion();
+        //Enviar la consulta
+        $sentencia = $db->prepare("SELECT * FROM auto WHERE id_marca = ?");
+        $sentencia->execute([$id]);
+        $marca = $sentencia->fetch(PDO::FETCH_OBJ);
+        return $marca;
+    }
+    
+    function detalleMarca($id){
+        //abrimos la conexion;
+        $db = $this->createConexion();
+        //Enviar la consulta
+        $sentencia = $db->prepare("SELECT * FROM auto WHERE id_marca = ?");
+        $sentencia->execute([$id]);
+        $marca = $sentencia->fetch(PDO::FETCH_OBJ);
+        return $marca;
+    }
+
+    function borrarMarca($id){
+        $db = $this->createConexion();
+        $resultado= $db->prepare("DELETE FROM auto WHERE id_marca = ?");
+        $resultado->execute([$id]); // ejecuta
+    }
+
+
+
 }
 
 

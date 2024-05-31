@@ -4,6 +4,7 @@ require_once "app/controller/vehicleController.php";
 require_once "app/controller/AutenticacionController.php";
 // require_once "app/controller/ErrController.php";
 require_once "app/controller/marcaController.php";
+require_once "app/controller/paginaController.php";
 
 // definimos la base url de forma dinamica
     define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
@@ -18,7 +19,7 @@ require_once "app/controller/marcaController.php";
    
     //  ACA VAN TODAS LAS FUNCIONES QUE TIENE LA PAGINA, Y PASAN POR EL ROUTER.
     switch ($parametro[0]) {
-       
+        // login y verificar si esta logueado
         case 'login':
             $controller = new AutenticacionController();
             $controller->MostrarLogin();
@@ -28,7 +29,15 @@ require_once "app/controller/marcaController.php";
             $controller = new AutenticacionController();
             $controller->verificar();
             break;
+        
+        // router parte de "nosotros"
+         case 'nosotros':
+            $controller = new paginaController();
+            $controller->mostrarNosotros();
+            break;
 
+
+        // router parte de la tabla autos
         case 'AgregarAutoNavBTN':
             $controller = new vehicleController();
             $controller->mostrarFormVehiculo();
@@ -82,6 +91,22 @@ require_once "app/controller/marcaController.php";
         case 'mostrarMarcas':
             $controller = new marcaController();
             $controller->mostrarMarcas();
+            break;
+
+        case 'eliminarMarca':
+            $controller = new marcaController();
+            $controller->borrarMarca();
+            break;
+
+        case 'detalleMarca':
+            $controller = new marcaController();
+            $controller->detalleMarca($parametro[1]);
+            break;    
+
+        case 'verMarca':
+            $controller = new marcaController();
+            $controller-> verMarca($parametro[1]);
+            break;    
 
         // default:
         //     $err = new ErrController();

@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    background-image: url('path/to/your/background-image.jpg'); /* Reemplaza con la URL de tu imagen */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    color: #333; /* Color del texto */
+    font-family: 'Arial', sans-serif; /* Fuente general */
+}
+
+header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.animated-header {
+    font-family: 'Georgia', 'Times New Roman', serif; /* Fuentes más formales */
+    font-size: 3em;
+    color: #000000; /* Color negro */
+    margin: 20px 0;
+    animation: slowSwing 5s infinite; /* Duración más lenta de 5 segundos */
+    display: inline-block;
+}
+
+main {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width:60%;
+}
+
+    footer {
+        margin-top: auto;
+        background-color: #f1f1f1; /* Ajusta el color de fondo a tu preferencia */
+        padding: 10px 0;
+    }
+    
+    .footer-content {
+        display: flex;
+        justify-content: space-around; /* Espacia los elementos proporcionalmente */
+        align-items: center;
+    }
+    
+    .footer-content p {
+        margin: 0;
+    }
+    
+    .footer .a {
+        color: inherit; /* Mantiene el color del texto */
+        text-decoration: none; /* Elimina el subrayado del enlace */
+    }

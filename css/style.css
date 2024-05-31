@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+footer {
+    margin-top: auto;
+    background-color: #f1f1f1; /* Ajusta el color de fondo a tu preferencia */
+    padding: 10px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around; /* Espacia los elementos proporcionalmente */
+    align-items: center;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.footer .a {
+    color: inherit; /* Mantiene el color del texto */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+}
+
+/* titlo h1 consecionaria estilos */
+
+@keyframes slowSwing {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.animated-header {
+    font-family: 'Georgia', 'Times New Roman', serif; /* Fuentes más formales */
+    font-size: 3em;
+    color: #000000; /* Color negro */
+    text-align: center;
+    margin: 20px 0;
+    animation: slowSwing 5s infinite; /* Duración más lenta de 5 segundos */
+    display: inline-block;
+}
+

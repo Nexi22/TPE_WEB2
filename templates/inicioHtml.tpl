@@ -26,7 +26,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Nosotros</a>
+            <a class="nav-link" href="nosotros">Nosotros</a>
           </li>
             <a class="nav-link" href="login">Login</a>
             <a class="nav-link" href="passwordHash">asd</a>

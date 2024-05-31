@@ -29,11 +29,13 @@
         <td>{$marca->ano_de_fundacion}</td>
         <td>{$marca->descripcion}</td>
         <td>
-                <a href='verVehiculo/{$vehicle->id}' class='btn btn-primary'>Ver</a>
+                <a href='detalleMarca/{$marca->id}' class='btn btn-primary'>Ver</a>
         </td>
         <td>            
-              <a href='borrar/{$vehicle->id}' class='btn btn-danger'>Eliminar</a>
+              <a href='eliminarMarca/{$marca->id}' class='btn btn-danger'>Eliminar</a>
         </td>
 
     </tr>
 {/foreach}
+
+
