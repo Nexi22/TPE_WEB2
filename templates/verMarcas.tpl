@@ -21,6 +21,6 @@
     
 </table>
 
-<a href="mostrarTablas" class="btn btn-primary">Volver al listado</a>
+<a href="mostrarMarcas" class="btn btn-primary">Volver al listado</a>
 
 {include 'finHtml.tpl'}

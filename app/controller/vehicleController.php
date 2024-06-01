@@ -76,6 +76,8 @@ class vehicleController{
        // header("Location:".BASE_URL."mostrarVehiculos");
     }
 
+
+    
     function detalleVehiculo($id){
         $this->model->getVehicleByID($id);
         header("Location:".BASE_URL."verVehiculo");
@@ -87,7 +89,6 @@ class vehicleController{
 
      function mostrarFormVehiculo(){
         $marca= $this->marcaModel->getNombreMarca();
-        
         $this->view->mostrarFormVehiculo($marca);
      }
 }

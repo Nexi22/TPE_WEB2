@@ -31,10 +31,13 @@
         <td>{$marca->ano_de_fundacion}</td>
         <td>{$marca->descripcion}</td>
         <td>
-                <a href='detalleMarca/{$marca->id}' class='btn btn-primary'>Ver</a>
+                <a href='detalleMarca/{$marca->id_marca}' class='btn btn-primary'>Ver</a>
         </td>
         <td>            
-              <a href='eliminarMarca/{$marca->id}' class='btn btn-danger'>Eliminar</a>
+              <a href='eliminarMarca/{$marca->id_marca}' class='btn btn-danger'>Eliminar</a>
+        </td>
+        <td>            
+              <a href='editarMarca/{$marca->id_marca}' class='btn btn-danger'>Editar</a>
         </td>
 
     </tr>

@@ -33,20 +33,46 @@ class marcaController{
 
         }    
     }
+
+    // funciones de los botones "acciones"
+
+
     function borrarMarca($id){
         $this->model->borrarMarca($id);
         header("Location:".BASE_URL."mostrarMarcas");
     }
 
-    // function detalleMarca($id){
-    //     $this->model->detalleMarca($id);
-    //     header("Location:".BASE_URL."verMarca");
-    // }
+    function detalleMarca($id){
+        $this->model->getMarcaByID($id);
+        header("Location:".BASE_URL."verMarca");
+    }
 
     function verMarca($id){
         $this->view->detalleMarca($id);
     }  
 
+    function editarVehiculo($id){ //LLEVA AL FORM PARA EDITAR EL MARCA
+        $marca=$this->model->getMarcaByID($id);
+        $this->view->editarMarca($marca);
+    }
+
+    function verificarEdicion(){
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
+            if(!empty($_POST['nombre'])&& !empty($_POST['pais_de_origen']) && !empty($_POST['ano_de_fundacion']) 
+                && !empty($_POST['descripcion'])){
+
+                    $modelo = $_POST['nombre'];
+                    $anio = $_POST['pais_de_origen'];
+                    $precio = $_POST['ano_de_fundacion'];
+                    $color = $_POST['descripcion'];
+                    $id = $_POST['id_marca'];
+                    
+                    $this->model->editarVehiculo($nombre, $pais_de_origen, $ano_de_fundacion, $descripcion, $id);
+                    header("Location:" .BASE_URL. "mostrarMarcas");
+                    
+                }            
+                }
+    }
 
 
     function mostrarMarcas(){

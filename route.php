@@ -111,20 +111,32 @@ require_once "app/controller/paginaController.php";
             $controller->mostrarMarcas();
             break;
 
-        // case 'eliminarMarca':
-        //     $controller = new marcaController();
-        //     $controller->borrarMarca();
-        //     break;
+         case 'eliminarMarca':
+             $controller = new marcaController();
+             $controller->borrarMarca($parametro[1]);
+            break;
+        
+        case 'editar':
+            $controller = new marcaController();
+            $controller->editarMarca($parametro[1]);
+            break;
+        
+        case 'verificar_edicionMarca':
+            $controller = new marcaController();
+            $controller->verificarEdicion();    
+            
 
-        // case 'detalleMarca':
-        //     $controller = new marcaController();
-        //     $controller->detalleMarca($parametro[1]);
-        //     break;    
+
+        case 'detalleMarca':
+             $controller = new marcaController();
+             $controller->detalleMarca($parametro[1]);
+             break;    
 
         case 'verMarca':
             $controller = new marcaController();
-            $controller-> verMarca($parametro[1]);
+            $controller->verMarca($parametro[1]);
             break;    
+
 
         // default:
         //     $err = new ErrController();
