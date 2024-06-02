@@ -53,42 +53,37 @@ require_once "app/controller/paginaController.php";
             $controller->mostrarFormVehiculo();
             break;    
         
-        case 'mostrarVehiculos':
+        case 'mostrarVehiculos': //MUESTRA LA TABLA CON TODOS LOS VEHICULOS QUE HAY EN LA DB
             $controller = new vehicleController();
             $controller->mostrarVehiculos();
             break;
 
-        case 'agregarAutoDb':
+        case 'agregarAutoDb': //AGREGAR AUTO A LA BASE DE DATOS
             $controller = new vehicleController();
             $controller->agregarVehiculo();
             break;
-
-        case'getVehicleByID':
+            
+        case 'verVehiculo': //ESTE ES EL BOTON PARA VER UN VEHICULO EN ESPECIFICO
             $controller = new vehicleController();
-            $controller-> detalleVehiculo($parametro[1]);
+            $controller-> verVehiculo($parametro[1]);
             break;
             
-        case 'verVehiculo':
-            $controller = new vehicleController();
-            $controller-> verVehiculo($parametro[0]);
-            break;
-            
-        case 'vendido':
+        case 'vendido': //MARCAR UN VEHICULO COMO VENDIDO
             $controller = new vehicleController();
             $controller->vehiculoVendido($parametro[1]);
             break;
             
-        case 'borrar':
+        case 'borrar': //BORRAR UN VEHICULO DE LA BASE DE DATOS
             $controller = new vehicleController();
             $controller->borrarVehiculo($parametro[1]);
             break;     
         
-        case 'editar':
+        case 'editar': //EDITAR UN VEHICULO DE LA BASE DE DATOS
             $controller = new vehicleController();
             $controller->editarVehiculo($parametro[1]);
             break;    
         
-        case 'verificar_edicion':
+        case 'verificar_edicion': //VERIFICA LA EDICION ANTES DE INSERTARLA
             $controller = new vehicleController();
             $controller->verificarEdicion();
             break;
@@ -106,27 +101,27 @@ require_once "app/controller/paginaController.php";
             $controller->mostrarFormMarca();
             break;
         
-        case 'mostrarMarcas':
+        case 'mostrarMarcas': //MUESTRA LA TABLA CON TODAS LAS MARCAS
             $controller = new marcaController();
             $controller->mostrarMarcas();
             break;
 
-         case 'eliminarMarca':
+         case 'eliminarMarca': //ELIMINA UNA MARCA DE LA DB
             $controller = new marcaController();
             $controller->borrarMarca($parametro[1]);
             break;
         
-        case 'editarMarca':
+        case 'editarMarca': //EDITA UNA MARCA 
             $controller = new marcaController();
             $controller->editarMarca($parametro[1]);
             break;
         
-        case 'verificar_edicionMarca':
+        case 'verificar_edicionMarca': //VERIFICA LA EDICION ANTES DE HACER EL UPDATE
             $controller = new marcaController();
             $controller->verificarEdicion();    
             break;
             
-        case 'detalleMarca':
+        case 'detalleMarca': //MUESTRA UNA MARCA EN ESPECIFICO
             $controller = new marcaController();
             $controller->verMarca($parametro[1]);
             break;    
