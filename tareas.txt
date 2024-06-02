@@ -1,0 +1,5 @@
+    Se agrego la funcionalidad borrar exitosamente a la tabla marca.
+    1- El ver sigue sin andar en ambos, solo falta arreglar los ver.
+    2- Verificar si el usuario esta logueado y si es rol admin.
+    3- Editar a la tabla marca.
+

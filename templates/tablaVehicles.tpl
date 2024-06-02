@@ -16,7 +16,7 @@
 <tbody>
     {if $cantidad == 0}
         <tr>
-            <td colspan=7>No hay tareas para mostrar</td>
+            <td colspan=7>No hay vehiculos para mostrar. Por favor, inserte uno.</td>
         </tr> 
     {/if}
 

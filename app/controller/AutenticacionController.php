@@ -28,7 +28,7 @@ class AutenticacionController{
                     $_SESSION['IS_LOGGED'] = true;
                     $_SESSION['ROLE'] = $usuario->rol;
 
-                    header("Location:" .BASE_URL. "mostrarVehiculos");
+                    header("Location:" .BASE_URL. "nosotros");
                     die();
                 }else{
                     $this->view->MostrarLogin("usuario incorrecto");

@@ -17,14 +17,9 @@ class vehicleController{
     }
 
     function mostrarVehiculos(){
-        if(AuthHelpers::checkLogged()){
-            $vehicles = $this->model->getAutoyMarca();
-            $this->view->mostrarVehiculos($vehicles);  
-        }else{
-            header("Location:".BASE_URL."login");
-
+        $vehicles = $this->model->getAutoyMarca();
+        $this->view->mostrarVehiculos($vehicles);  
         }
-    }
 
     function agregarVehiculo(){ //FUNCION QUE AÑADE UN VEHICULO A LA DB
         if($_SERVER["REQUEST_METHOD"] == "POST"){

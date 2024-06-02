@@ -49,7 +49,7 @@ class marcaModel extends model {
         $db = $this->createConexion();       //Enviar la consulta
         $sentencia = $db->prepare("SELECT * FROM marca WHERE id_marca = ?");
         $sentencia->execute([$id]);
-        $marca = $sentencia->fetch(PDO::FETCH_OBJ); 
+        $marca = $sentencia->fetch(PDO::FETCH_OBJ);
         return $marca;
     }
 
@@ -58,6 +58,12 @@ class marcaModel extends model {
         $db = $this->createConexion();
         $resultado= $db->prepare("DELETE FROM marca WHERE id_marca = ?");
         $resultado->execute([$id]); // ejecuta
+    }
+    
+    function editarMarca($nombre, $pais_de_origen, $ano_de_fundacion, $descripcion, $id_marca) {
+        $db = $this->createConexion();
+        $resultado = $db->prepare("UPDATE marca SET nombre = ?, pais_de_origen = ?, ano_de_fundacion = ?, descripcion = ? WHERE id_marca = ?");
+        $resultado->execute([$nombre, $pais_de_origen, $ano_de_fundacion, $descripcion, $id_marca]);
     }
     
 

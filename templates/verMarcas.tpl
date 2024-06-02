@@ -15,7 +15,7 @@
         <td>{$marca->ano_de_fundacion}</td>
     </tr>
     <tr>
-        <th>descripcion</th>
+        <th>Descripcion</th>
         <td>{$marca->descripcion}</td>
     </tr>
     

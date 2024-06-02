@@ -10,25 +10,26 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="mostrarVehiculos">Inicio</a>
+      <a class="navbar-brand" href="nosotros">Inicio</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-              Agregar
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="AgregarAutoNavBTN">Vehiculo</a></li>
-              <li><a class="dropdown-item" href="AgregarMarcaNavBTN">Marca</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="nosotros">Nosotros</a></li>
+          
           {if $logeado}
+            <li class="nav-item"><a class="nav-link" href="mostrarVehiculos">Vehiculos</a></li>
+            <li class="nav-item"><a class="nav-link" href="mostrarMarcas">Marcas</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
+              data-toggle="dropdown" aria-expanded="false">Agregar</a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="AgregarAutoNavBTN">Vehiculo</a></li>
+                  <li><a class="dropdown-item" href="AgregarMarcaNavBTN">Marca</a></li>
+                </ul>
+            </li>
             <li class="nav-item"><a class="nav-link" href="logout">logout</a></li>
-            <li class="nav-item"><a class="nav-link" href="">Bienvenido pelotudo {$usuario}</a></li>
+            <li class="nav-item"><a class="nav-link">Bienvenido! {$usuario}</a></li>
             {else}
               <li><a class="nav-link" href="login">Login</a></li>
           {/if}

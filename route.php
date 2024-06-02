@@ -47,7 +47,7 @@ require_once "app/controller/paginaController.php";
             break;
 
 
-        // router parte de la tabla autos
+        // ROUTER PARA LA TABLA AUTOS
         case 'AgregarAutoNavBTN':
             $controller = new vehicleController();
             $controller->mostrarFormVehiculo();
@@ -70,7 +70,7 @@ require_once "app/controller/paginaController.php";
             
         case 'verVehiculo':
             $controller = new vehicleController();
-            $controller-> verVehiculo($parametro[1]);
+            $controller-> verVehiculo($parametro[0]);
             break;
             
         case 'vendido':
@@ -91,11 +91,11 @@ require_once "app/controller/paginaController.php";
         case 'verificar_edicion':
             $controller = new vehicleController();
             $controller->verificarEdicion();
-        //ROOT DE LA TABLA MARCA
-          //  
-            //
-            //
-            //
+            break;
+
+
+
+        //ROOT DE LA TABLA MARCA//  
          case 'AgregarMarcaSubmitBTN': //ESTE INSERTA LA MARCA EN LA DB
             $controller = new marcaController();
             $controller->agregarMarca();
@@ -112,11 +112,11 @@ require_once "app/controller/paginaController.php";
             break;
 
          case 'eliminarMarca':
-             $controller = new marcaController();
-             $controller->borrarMarca($parametro[1]);
+            $controller = new marcaController();
+            $controller->borrarMarca($parametro[1]);
             break;
         
-        case 'editar':
+        case 'editarMarca':
             $controller = new marcaController();
             $controller->editarMarca($parametro[1]);
             break;
@@ -124,18 +124,14 @@ require_once "app/controller/paginaController.php";
         case 'verificar_edicionMarca':
             $controller = new marcaController();
             $controller->verificarEdicion();    
+            break;
             
-
-
         case 'detalleMarca':
-             $controller = new marcaController();
-             $controller->detalleMarca($parametro[1]);
-             break;    
-
-        case 'verMarca':
             $controller = new marcaController();
             $controller->verMarca($parametro[1]);
             break;    
+        
+        
 
 
         // default:

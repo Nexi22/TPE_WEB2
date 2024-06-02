@@ -12,8 +12,8 @@ class VehicleView extends View{
 
     }
 
-    function detalleVehiculo($vehicle){
-      $this->smarty->assign("vehicle", $vehicle);
+    function detalleVehiculo($vehicles){
+      $this->smarty->assign("vehicle", $vehicles);
       $this->smarty->display('verVehiculos.tpl');
     }
 

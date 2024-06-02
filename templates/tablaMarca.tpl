@@ -3,10 +3,10 @@
 <table class="table table-success table-striped mt-2">
     <thead>
     <tr>
-    <th scope="col">nombre</th>
-    <th scope="col">pais de origen</th>
-    <th scope="col">año de fundacion</th>
-    <th scope="col">descripcion</th>
+    <th scope="col">Nombre</th>
+    <th scope="col">Pais de origen</th>
+    <th scope="col">Año de fundacion</th>
+    <th scope="col">Descripcion</th>
     <th scope="col">Acciones</th>
     
     
@@ -16,7 +16,7 @@
 <tbody>
     {if $cantidad == 0}
         <tr>
-            <td colspan=4>No hay tareas para mostrar</td>
+            <td colspan=5>No hay marcas para mostrar. Por favor, inserte una.</td>
         </tr> 
     {/if}
 

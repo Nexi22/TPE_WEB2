@@ -17,6 +17,6 @@
             {$msj}
           </div>
         {/if}
-        <button type="submit" class="btn btn-primary col-12">Submit</button>
+        <button type="submit" class="btn btn-primary col-12">Ingresar</button>
     </form>
 {include 'finHtml.tpl'}
