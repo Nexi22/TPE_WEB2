@@ -1,6 +1,9 @@
 <?php
 require_once "app/model/VehicleModel.php";
 require_once "app/view/VehicleView.php";
+require_once "app/model/marcaModel.php";
+require_once "app/controller/ErrController.php";
+
 
 class vehicleController{
 
@@ -13,7 +16,7 @@ class vehicleController{
         $this->model = new vehicleModel();
         $this->view = new VehicleView();
         $this->marcaModel = new marcaModel();
-        // $this->err = new vehicleErr();
+        $this->err = new ErrController();
     }
 
     function mostrarVehiculos(){
@@ -34,7 +37,9 @@ class vehicleController{
                     $this->model->insertar($modelo, $anio, $precio, $color, $id);
                     header("Location:" .BASE_URL. "mostrarVehiculos");
                     
-                }
+                }else{
+                    $this->err->showErr("faltan datos");
+                    }
         }    
     }
 
@@ -66,7 +71,9 @@ class vehicleController{
                     $this->model->editarVehiculo($modelo, $anio, $precio, $color, $id);
                     header("Location:" .BASE_URL. "mostrarVehiculos");
                     
-                }            
+                }else{
+                    $this->err->showErr("No existe el producto con id: $id");
+                    }            
                 }
        // header("Location:".BASE_URL."mostrarVehiculos");
     }
@@ -76,11 +83,20 @@ class vehicleController{
         $this->view->detalleVehiculo($vehiculo);
     }
 
+    // public function filtrarPorMarca($id) { 
+    //     $vehi=$this->vehicleModel->getVehicleByID($id);
+    //     $this->view->mostrarPorMarca($vehi);
+    // }
+
+    
      function mostrarFormVehiculo(){
         $marca= $this->marcaModel->getNombreMarca();
         $this->view->mostrarFormVehiculo($marca);
      }
-}
 
+
+
+
+}
 
     

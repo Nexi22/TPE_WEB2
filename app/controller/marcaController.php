@@ -1,16 +1,20 @@
 <?php   
 require_once "app/model/marcaModel.php";
 require_once "app/view/marcaview.php";
+require_once "app/view/ErrorView.php";
+
+
 
 class marcaController{
     private $model;
     private $view;
-    //private $err;
+    private $err;
 
 
     public function __construct(){
         $this->model = new marcaModel();
         $this->view = new marcaView();
+        $this->err = new ErrorView();
     }
 
     function mostrarFormMarca(){ //agarra las marcas usando el método getAllMarcas y pasa los datos a la vista.
@@ -30,6 +34,9 @@ class marcaController{
                     
                 $this->model->insertarMarca($nombre, $pais_de_origen, $ano_de_fundacion, $descripcion);
                 header("Location:" .BASE_URL. "mostrarMarcas");
+            }
+            else{
+                $this->err->showErr("Faltan datos");   
             }
         }    
     }
@@ -66,6 +73,8 @@ class marcaController{
                     
                 $this->model->editarMarca($nombre, $pais_de_origen, $ano_de_fundacion, $descripcion, $id_marca);
                 header("Location:" .BASE_URL. "mostrarMarcas");        
+            }else{
+                $this->err->showErr("Faltan datos");   
             }            
         }
     }

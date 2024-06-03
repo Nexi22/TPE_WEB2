@@ -30,16 +30,18 @@
         <td>{$marca->pais_de_origen}</td>
         <td>{$marca->ano_de_fundacion}</td>
         <td>{$marca->descripcion}</td>
+           
         <td>
                 <a href='detalleMarca/{$marca->id_marca}' class='btn btn-primary'>Ver</a>
         </td>
+            {if $role =='admin'}
         <td>            
               <a href='eliminarMarca/{$marca->id_marca}' class='btn btn-danger'>Eliminar</a>
         </td>
         <td>            
               <a href='editarMarca/{$marca->id_marca}' class='btn btn-danger'>Editar</a>
         </td>
-
+            {/if}
     </tr>
 {/foreach}
 

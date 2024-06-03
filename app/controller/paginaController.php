@@ -8,9 +8,9 @@ class paginaController{
     private $err;
 
     public function __construct() {
-        //$this->model = new vehicleModel();
+        
         $this->view = new nosotrosView();
-        // $this->err = new vehicleErr();
+       
     }
 
     function mostrarNosotros(){

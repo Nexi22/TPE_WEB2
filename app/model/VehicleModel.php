@@ -54,6 +54,15 @@ class VehicleModel extends model{
         $vehicle = $sentencia->fetch(PDO::FETCH_OBJ);
         return $vehicle;
     }
+    
+    function getVehiculosByMarcas(){
+        $db = $this->createConexion();
+        $sentencia = $db->prepare("SELECT * FROM auto a, marca m WHERE a.id_auto = m.id_marca");       
+        $sentencia->execute([]);
+        $vehiclesXmarca = $sentencia->fetchALL(PDO::FETCH_OBJ);
+        return $vehiclesXmarca;
+    }
+    
 
     function mostrarFormVehiculo(){
         $db = $this->createConexion();

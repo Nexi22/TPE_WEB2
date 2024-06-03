@@ -1,6 +1,6 @@
 <?php
 require_once "libs/Smarty.class.php";
-require_once "app/helpers/AuthHelpers.php";
+require_once "helpers/AuthHelpers.php";
 
 
 class View {
@@ -11,6 +11,8 @@ class View {
         $this->smarty->assign("base", BASE_URL);
         $this->smarty->assign("logeado", AuthHelpers::isLogged());
         $this->smarty->assign("usuario", AuthHelpers::userName());
+        $this->smarty->assign("role", AuthHelpers::userRole());
+
     }
   
 }

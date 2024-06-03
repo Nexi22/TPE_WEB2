@@ -28,4 +28,12 @@ class VehicleView extends View{
       $this->smarty->assign('marca', $marca);
       $this->smarty->display('agregarVehiculo.tpl');
     }
+
+    
+
+    // function mostrarPorMarca($vehi){ //se utiliza para filtrar por marca en la tabla tablaVehicles
+    //   $this->smarty->assign('vehi', $vehi);
+    //   $this->smarty->display('vehiculosXMarcas.tpl');
+    // }
+
 }

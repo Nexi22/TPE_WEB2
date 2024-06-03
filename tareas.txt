@@ -3,3 +3,36 @@
     2- Verificar si el usuario esta logueado y si es rol admin.
     3- Editar a la tabla marca.
 
+tengo las siguientes 2 tablas 
+CREATE TABLE `auto` (
+  `id_auto` int(11) NOT NULL,
+  `modelo` varchar(50) NOT NULL,
+  `anio` int(4) NOT NULL,
+  `precio` int(30) NOT NULL,
+  `color` varchar(20) NOT NULL,
+  `vendido` tinyint(1) DEFAULT NULL,
+  `id_marca` int(255) NOT NULL
+)
+
+
+CREATE TABLE `marca` (
+  `id_marca` int(11) NOT NULL,
+  `nombre` varchar(250) NOT NULL,
+  `pais_de_origen` varchar(250) NOT NULL,
+  `ano_de_fundacion` int(250) NOT NULL,
+  `descripcion` varchar(250) NOT NULL
+)
+ con mi siguiente smarty
+
+ <div class="container btn-group dropdown" >
+        <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Lista de autos por marcas
+        </button>
+        <ul class="dropdown-menu text-hover dropdown-menu-dark form-select">
+            {foreach $vehiclesXmarca as $m}
+                <a class="dropdown-item"  href="filtrarMarca/{($m->nombre)}" ><li >{$m->nombre}</li></a>
+            {/foreach}
+        </ul>
+        
+</div>
+mi siguiente controller

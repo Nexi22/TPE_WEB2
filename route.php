@@ -6,6 +6,7 @@ require_once "app/controller/AutenticacionController.php";
 require_once "app/controller/marcaController.php";
 require_once "app/controller/paginaController.php";
 
+
 // definimos la base url de forma dinamica
     define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -63,11 +64,12 @@ require_once "app/controller/paginaController.php";
             $controller->agregarVehiculo();
             break;
             
-        case 'verVehiculo': //ESTE ES EL BOTON PARA VER UN VEHICULO EN ESPECIFICO
+        case 'verVehiculo':
             $controller = new vehicleController();
-            $controller-> verVehiculo($parametro[1]);
+            $controller->verVehiculo($parametro[1]);
             break;
             
+
         case 'vendido': //MARCAR UN VEHICULO COMO VENDIDO
             $controller = new vehicleController();
             $controller->vehiculoVendido($parametro[1]);
@@ -88,7 +90,12 @@ require_once "app/controller/paginaController.php";
             $controller->verificarEdicion();
             break;
 
-
+        // case 'filtrarMarca': //filtrar por marca en la tabla vehiculos   
+        //     $controller = new vehicleController();
+        //     $controller->filtrarPorMarca($parametro[1]);
+        //     break;
+        
+        
 
         //ROOT DE LA TABLA MARCA//  
          case 'AgregarMarcaSubmitBTN': //ESTE INSERTA LA MARCA EN LA DB

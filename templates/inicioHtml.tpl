@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
   <title>Concesionaria</title>
 </head>
 <body>
@@ -17,9 +19,11 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           
-          {if $logeado}
+          
             <li class="nav-item"><a class="nav-link" href="mostrarVehiculos">Vehiculos</a></li>
             <li class="nav-item"><a class="nav-link" href="mostrarMarcas">Marcas</a></li>
+            
+            {if $role == 'admin'}  {*en este if se pregunta el rol del usuario es 'admin' para mostrar  *}
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" 
               data-toggle="dropdown" aria-expanded="false">Agregar</a>
@@ -27,12 +31,18 @@
                   <li><a class="dropdown-item" href="AgregarAutoNavBTN">Vehiculo</a></li>
                   <li><a class="dropdown-item" href="AgregarMarcaNavBTN">Marca</a></li>
                 </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="logout">logout</a></li>
-            <li class="nav-item"><a class="nav-link">Bienvenido! {$usuario}</a></li>
-            {else}
-              <li><a class="nav-link" href="login">Login</a></li>
-          {/if}
+                </li>
+            {/if}
+
+            {if $logeado}      {*en este if se pregunta  si esta logueado si lo esta muestra el logout si no muestra el login *}
+                <li class="nav-item"><a class="nav-link" href="logout">logout</a></li>
+                <li class="nav-item"><a class="nav-link">Bienvenido! {$usuario}</a></li>
+                {else}
+                  <li><a class="nav-link" href="login">Login</a></li>
+            {/if}
+            
+            
+
         </ul>
       </div>
     </div>
