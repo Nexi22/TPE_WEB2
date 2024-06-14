@@ -30,5 +30,7 @@
     </tbody>
 </table>
 
+<a href="filtrarMarca"><button type="submit" class="btn btn-primary col-12 text-center mt-4 col-3 m-auto"> Volver</button></a> 
+
 
 
