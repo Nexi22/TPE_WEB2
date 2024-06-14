@@ -36,10 +36,10 @@ require_once "app/controller/paginaController.php";
             $controller->logout();
             break;
         
-        case 'about':
-            $pass = "12345";
-            echo password_hash($pass, PASSWORD_DEFAULT);
-            break;
+        // case 'about':
+        //     $pass = "12345";
+        //     echo password_hash($pass, PASSWORD_DEFAULT);
+        //     break;
 
         // router parte de "nosotros"
          case 'nosotros':

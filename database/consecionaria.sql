@@ -55,7 +55,7 @@ CREATE TABLE `marca` (
   `id_marca` int(11) NOT NULL,
   `nombre` varchar(250) NOT NULL,
   `pais_de_origen` varchar(250) NOT NULL,
-  `ano_de_fundacion` int(250) NOT NULL,
+  `ano_de_fundacion` int(4) NOT NULL,
   `descripcion` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -133,8 +133,9 @@ ALTER TABLE `usuario`
 -- Filtros para la tabla `auto`
 --
 ALTER TABLE `auto`
-  ADD CONSTRAINT `auto_ibfk_1` FOREIGN KEY (`id_auto`) REFERENCES `marca` (`id_marca`);
+  ADD CONSTRAINT `auto_ibfk_1` FOREIGN KEY (`id_marca`) REFERENCES `marca` (`id_marca`) ON DELETE CASCADE;
 COMMIT;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
