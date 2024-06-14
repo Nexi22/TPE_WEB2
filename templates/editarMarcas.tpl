@@ -24,4 +24,7 @@
 
       <button type="submit" class="btn btn-primary col-12">Submit</button>
     </form>
+    {if $err}
+      <h3 class="alert alert-warning text-center mt-4 col-3 m-auto">{$err}</h3>
+    {/if} 
 {include 'finHtml.tpl' }

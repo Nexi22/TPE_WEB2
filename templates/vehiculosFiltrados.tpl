@@ -7,13 +7,14 @@
             <th scope="col">Año</th>
             <th scope="col">Precio</th>
             <th scope="col">Color</th>
+            <th scope="col">Marca</th>
         </tr>
     </thead>
 
     <tbody>
         {if $autos|@count == 0}
             <tr>
-                <td colspan=4>No hay vehículos para mostrar. Por favor, inserte uno.</td>
+                <td colspan=4>No hay vehículos para mostrar.</td>
             </tr> 
         {/if}
 
@@ -23,6 +24,7 @@
                 <td>{$auto->anio}</td>
                 <td>{$auto->precio}</td>
                 <td>{$auto->color}</td>
+                <td>{$marca->nombre}</td>
             </tr>
         {/foreach}
     </tbody>

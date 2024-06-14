@@ -9,7 +9,7 @@
             {/foreach}
         </select>
     </div>
-    <button type="submit"> Buscar</button>
+    <button type="submit" class="btn btn-primary col-12"> Buscar</button>
 </form>
 
 {include 'finHtml.tpl'}

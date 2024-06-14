@@ -14,8 +14,9 @@ class marcaView extends View{
     $this->smarty->display('verMarcas.tpl');
   }
 
-  function editarMarca($marca){
+  function editarMarca($marca, $err = null){
     $this->smarty->assign('marca', $marca);
+    $this->smarty->assign('err', $err);
     $this->smarty->display('editarMarcas.tpl');
   }
 
@@ -24,8 +25,9 @@ class marcaView extends View{
     $this->smarty->display('agregarMarca.tpl');
   }
 
-  function yaFiltrados($autos){
+  function yaFiltrados($marca, $autos){
     $this->smarty->assign("autos", $autos);
+    $this->smarty->assign("marca", $marca);
     $this->smarty->display('vehiculosFiltrados.tpl');
   }
 
