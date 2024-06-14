@@ -48,10 +48,14 @@ class marcaController{
         header("Location:".BASE_URL."mostrarMarcas");
     }
 
+    private function detalleMarca($id) {
+        $marcaID = $this->model->getMarcaByID($id);
+        return $marcaID;
+    }
 
     public function verMarca($id) {
-        $marca = $this->model->getMarcaByID($id);  
-        $this->view->detalleMarca($marca);
+        $detalle = $this->detalleMarca($id);  
+        $this->view->detalleMarca($detalle);
     }
 
     function editarVehiculo($id){ //LLEVA AL FORM PARA EDITAR LA MARCA
