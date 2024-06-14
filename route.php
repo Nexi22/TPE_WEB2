@@ -37,7 +37,7 @@ require_once "app/controller/paginaController.php";
             break;
         
         // case 'about':
-        //     $pass = "12345";
+        //     $pass = "123456";
         //     echo password_hash($pass, PASSWORD_DEFAULT);
         //     break;
 
@@ -90,10 +90,6 @@ require_once "app/controller/paginaController.php";
             $controller->verificarEdicion();
             break;
 
-        // case 'filtrarMarca': //filtrar por marca en la tabla vehiculos   
-        //     $controller = new vehicleController();
-        //     $controller->filtrarPorMarca($parametro[1]);
-        //     break;
         
         
 
@@ -123,6 +119,17 @@ require_once "app/controller/paginaController.php";
             $controller->editarMarca($parametro[1]);
             break;
         
+        case 'filtrarMarca': //FILTRAR POR MARCA
+            $controller = new marcaController();
+            $controller->filtrarPorMarca();
+            break;
+        
+
+        case 'buscar': //FILTRAR POR MARCA
+            $controller = new marcaController();
+            $controller->buscar();
+            break;
+               
         case 'verificar_edicionMarca': //VERIFICA LA EDICION ANTES DE HACER EL UPDATE
             $controller = new marcaController();
             $controller->verificarEdicion();    

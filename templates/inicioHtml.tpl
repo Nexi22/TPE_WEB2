@@ -33,7 +33,7 @@
                 </ul>
                 </li>
             {/if}
-
+            <li class="nav-item"><a class="nav-link" href="filtrarMarca">Buscar</a></li>
             {if $logeado}      {*en este if se pregunta  si esta logueado si lo esta muestra el logout si no muestra el login *}
                 <li class="nav-item"><a class="nav-link" href="logout">logout</a></li>
                 <li class="nav-item"><a class="nav-link">Bienvenido! {$usuario}</a></li>

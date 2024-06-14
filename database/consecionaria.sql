@@ -81,6 +81,11 @@ CREATE TABLE `usuario` (
   `rol` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+INSERT INTO `usuario`(`id`, `email`, `password`, `rol`) VALUES 
+(1, 'webadmin','$2y$10$FrQLhHID9p3P0Icwyr0uWOQhPgTLrWXZfxhDYzDjtnntJO28Y.MSW','admin'),
+(2, 'notadmin','$2y$10$5NAqV3QBUNcOxloaz1jaA.1ChRcKZ4leDgU6j1P9OHiqANHUpuH.a','user'),
+(3, 'prueba','$2y$10$7Au7E2hNhKfF1XS1xif7qeh58A7B3DjtaWsAYgZA9.Nplop2RInGy','user');
+
 --
 -- Índices para tablas volcadas
 --

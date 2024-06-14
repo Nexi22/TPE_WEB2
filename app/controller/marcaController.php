@@ -2,16 +2,20 @@
 require_once "app/model/marcaModel.php";
 require_once "app/view/marcaview.php";
 require_once "app/view/ErrorView.php";
+require_once "app/model/vehicleModel.php";
+require_once "app/controller/vehicleController.php";
 
 
 
 class marcaController{
+    private $vehicle;
     private $model;
     private $view;
     private $err;
 
 
     public function __construct(){
+        $this->vehicle = new VehicleModel();
         $this->model = new marcaModel();
         $this->view = new marcaView();
         $this->err = new ErrorView();
@@ -61,6 +65,19 @@ class marcaController{
     function editarVehiculo($id){ //LLEVA AL FORM PARA EDITAR LA MARCA
         $marca=$this->model->getMarcaByID($id);
         $this->view->editarMarca($marca);
+    }
+
+    function filtrarPorMarca(){
+        $marcas = $this->model->getALLMarcas();
+        $this->view->verFiltrados($marcas);
+    }
+
+    function buscar(){
+        $id = $_POST['buscar_id'];
+        if($id){
+            $autos=$this->vehicle->getAllVehicleByMarca($id);
+            $this->view->yaFiltrados($autos);
+        }
     }
     //FIN DE LAS FUNCIONES DE LOS BOTONES
 
