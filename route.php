@@ -2,7 +2,7 @@
 
 require_once "app/controller/vehicleController.php";
 require_once "app/controller/AutenticacionController.php";
-// require_once "app/controller/ErrController.php";
+require_once "app/controller/ErrController.php";
 require_once "app/controller/marcaController.php";
 require_once "app/controller/paginaController.php";
 
@@ -90,11 +90,7 @@ require_once "app/controller/paginaController.php";
             $controller->verificarEdicion();
             break;
 
-        // case 'filtrarMarca': //filtrar por marca en la tabla vehiculos   
-        //     $controller = new vehicleController();
-        //     $controller->filtrarPorMarca($parametro[1]);
-        //     break;
-        
+       
         
 
         //ROOT DE LA TABLA MARCA//  
@@ -135,8 +131,7 @@ require_once "app/controller/paginaController.php";
         
         
 
-
-        // default:
-        //     $err = new ErrController();
-        //     $err->showErr("404 not found");
+        default:
+            $err = new ErrController();
+            $err->showErr("404 not found");
     }
