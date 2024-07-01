@@ -72,7 +72,7 @@ class vehicleController{
                     header("Location:" .BASE_URL. "mostrarVehiculos");
                     
                 }else{
-                    $this->err->showErr("No existe el producto con id: $id");
+                    $this->err->showErr("No existe el vehiculo");
                     }            
                 }
        // header("Location:".BASE_URL."mostrarVehiculos");
@@ -83,16 +83,10 @@ class vehicleController{
         $this->view->detalleVehiculo($vehiculo);
     }
 
-    // public function filtrarPorMarca($id) { 
-    //     $vehi=$this->vehicleModel->getVehicleByID($id);
-    //     $this->view->mostrarPorMarca($vehi);
-    // }
-
-    
-     function mostrarFormVehiculo(){
+    function mostrarFormVehiculo(){
         $marca= $this->marcaModel->getNombreMarca();
         $this->view->mostrarFormVehiculo($marca);
-     }
+    }
 
 
 

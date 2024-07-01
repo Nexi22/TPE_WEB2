@@ -53,6 +53,15 @@ class marcaModel extends model {
         return $marca;
     }
 
+    function getMarcaByFilter($id){
+        //abrimos la conexion;
+        $db = $this->createConexion();       //Enviar la consulta
+        $sentencia = $db->prepare("SELECT * FROM marca WHERE id_marca = ?");
+        $sentencia->execute([$id]);
+        $marcas = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $marcas;
+    }
+
     
     function borrarMarca($id){
         $db = $this->createConexion();

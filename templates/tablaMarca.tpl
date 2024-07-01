@@ -1,5 +1,6 @@
 {include 'inicioHtml.tpl'}
 
+  
 <table class="table table-success table-striped mt-2">
     <thead>
     <tr>

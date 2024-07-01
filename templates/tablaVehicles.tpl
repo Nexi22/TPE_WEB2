@@ -50,15 +50,5 @@
     </tbody>
 </table>
 
-{* <div class="mb-3">
-        <label class="form-label">Marca del vehiculo</label>
-          <select name="id_marca" class="form-control">
-            <option value="">Seleccione una marca</option>
-            {foreach from=$marca item=m}
-              <option value="{$m->id_marca}">{$m->nombre}</option>
-            {/foreach}
-          </select>
-      </div> *}
-
 
 

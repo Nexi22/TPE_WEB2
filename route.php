@@ -36,10 +36,10 @@ require_once "app/controller/paginaController.php";
             $controller->logout();
             break;
         
-        case 'about':
-            $pass = "12345";
-            echo password_hash($pass, PASSWORD_DEFAULT);
-            break;
+        // case 'about':
+        //     $pass = "123456";
+        //     echo password_hash($pass, PASSWORD_DEFAULT);
+        //     break;
 
         // router parte de "nosotros"
          case 'nosotros':
@@ -90,7 +90,7 @@ require_once "app/controller/paginaController.php";
             $controller->verificarEdicion();
             break;
 
-       
+        
         
 
         //ROOT DE LA TABLA MARCA//  
@@ -119,6 +119,17 @@ require_once "app/controller/paginaController.php";
             $controller->editarMarca($parametro[1]);
             break;
         
+        case 'filtrarMarca': //FILTRAR POR MARCA
+            $controller = new marcaController();
+            $controller->filtrarPorMarca();
+            break;
+        
+
+        case 'buscar': //FILTRAR POR MARCA
+            $controller = new marcaController();
+            $controller->buscar();
+            break;
+               
         case 'verificar_edicionMarca': //VERIFICA LA EDICION ANTES DE HACER EL UPDATE
             $controller = new marcaController();
             $controller->verificarEdicion();    

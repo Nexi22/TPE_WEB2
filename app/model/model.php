@@ -36,7 +36,8 @@ class Model {
 
     // Función que permite la creación de tablas o entidades
     function deploy() {
-        $this->createTables();           
+        $this->createTables(); 
+        $this->createUsuarios();          
     }
 
     function createTables() {
@@ -50,6 +51,7 @@ class Model {
                 `rol` varchar(20) NOT NULL,
                 PRIMARY KEY (`id`)
             );
+            
             
            
             CREATE TABLE IF NOT EXISTS `marca` (
@@ -75,10 +77,15 @@ class Model {
             alter TABLE auto ADD CONSTRAINT fk_auto_marca FOREIGN KEY (id_marca) REFERENCES marca(id_marca);
             ";
         
-        // Se usa un bucle foreach para iterar sobre cada consulta en el array $sqls y ejecutarlas de forma individual.
-        
             $this->conexion->query($sql);
-    
+    }
+
+    function createUsuarios() {
+        $insertUsuarios = "INSERT IGNORE INTO `usuario` (`email`, `password`, `rol`) VALUES
+            ('webadmin', '$2y$10$5NAqV3QBUNcOxloaz1jaA.1ChRcKZ4leDgU6j1P9OHiqANHUpuH.a', 'admin'),
+            ('prueba', '$2y$10$7Au7E2hNhKfF1XS1xif7qeh58A7B3DjtaWsAYgZA9.Nplop2RInGy', 'user')";
+
+        $this->conexion->query($insertUsuarios);
     }
 }
 ?>
